@@ -177,18 +177,14 @@ public class WorldOfJava {
 			while (combattant1.getPointDeVie()>0 && combattant2.getPointDeVie()>0) {
 				if (turn) {
 					combattant1.setPointDeVie(combattant1.getPointDeVie()- combattant2.getDegat());
-					System.out.println("1");
-					Monde.afficherInformations(combattant1);
-					Monde.afficherInformations(combattant2);
 					turn = false;
 				}
 				else {
 					combattant2.setPointDeVie(combattant2.getPointDeVie()- combattant1.getDegat());
-					System.out.println("2");
-					Monde.afficherInformations(combattant1);
-					Monde.afficherInformations(combattant2);
 					turn = true;
 				}
+				Monde.afficherInformations(combattant1);
+				Monde.afficherInformations(combattant2);
 			}
 			
 		}
