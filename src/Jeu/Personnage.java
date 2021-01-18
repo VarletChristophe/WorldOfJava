@@ -1,13 +1,14 @@
 package Jeu;
 
-public class Personnage {
+public class Personnage extends AbstractCombattant{
 	
 	/**
 	 * Attributs
 	 */
-	private int pointDeVie;
-	private int degat;
-	private String nom;
+	// En commentaire car les attributs sont déclarés dans la classe abstraite AbstractCombattant
+	//private int pointDeVie;
+	//private int degat;
+	//private String nom;
 	
 	/**
 	 * Constructeurs
@@ -16,11 +17,11 @@ public class Personnage {
 		super();
 	}
 	
-	public Personnage(int pointDeVie, int degat, String nom) {
+	public Personnage(String nom, int pointDeVie, int degat) {
 		super();
+		this.nom = nom;
 		this.pointDeVie = pointDeVie;
 		this.degat = degat;
-		this.nom = nom;
 	}
 
 	/**
