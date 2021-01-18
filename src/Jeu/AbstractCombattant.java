@@ -1,6 +1,10 @@
 package Jeu;
 
-public abstract class AbstractCombattant {
+import Interface.ICombattant;
+
+public abstract class AbstractCombattant implements ICombattant {
+
+
 
 	public String nom;
 	public int pointDeVie;
@@ -61,5 +65,18 @@ public abstract class AbstractCombattant {
 		return "Combattant [nom : " + nom + ", pdv : " + pointDeVie + ", degats : " + degat + "]";
 	}
 	
-	
+	/**
+	 * Méthode récupérée de l'interface ICombattant pour attaquer ou défendre
+	 * Attaquer : Les points de vie de l'adversaire sont diminués des degats de l'attaquant
+	 * Defendre : Les points de vie de l'attaquant sont diminués des degats de l'adversaire ... passés en paramètre)
+	 */
+	@Override
+	public void attaquer(ICombattant adversaire) {
+		adversaire.setPointDeVie(adversaire.getPointDeVie() - this.degat);
+	}
+
+	@Override
+	public void defendre(int degat) {
+		this.setPointDeVie(this.getPointDeVie() - degat);
+	}
 }
