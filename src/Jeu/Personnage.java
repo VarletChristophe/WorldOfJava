@@ -1,6 +1,9 @@
 package Jeu;
 
-public class Personnage extends AbstractCombattant{
+import Interface.IAttaque;
+import Interface.ICombattant;
+
+public class Personnage extends AbstractCombattant implements IAttaque{
 	
 	/**
 	 * Attributs
@@ -9,6 +12,7 @@ public class Personnage extends AbstractCombattant{
 	//private int pointDeVie;
 	//private int degat;
 	//private String nom;
+	Classe classe;
 	
 	/**
 	 * Constructeurs
@@ -17,11 +21,12 @@ public class Personnage extends AbstractCombattant{
 		super();
 	}
 	
-	public Personnage(String nom, int pointDeVie, int degat) {
+	public Personnage(String nom, int pointDeVie, int degat, Classe classe) {
 		super();
 		this.nom = nom;
 		this.pointDeVie = pointDeVie;
 		this.degat = degat;
+		this.classe = classe;
 	}
 
 	/**
@@ -57,7 +62,37 @@ public class Personnage extends AbstractCombattant{
 	 */
 	@Override
 	public String toString() {
-		return "Nom : "+ nom + ", pointDeVie : " + pointDeVie + ", attaque : " + degat;
+		return "Nom : "+ nom + ", pointDeVie : " + pointDeVie + ", attaque : " + degat + ", classe : " + classe;
+	}
+
+	@Override
+	public int LancerAttaque(ICombattant lanceur, ICombattant cible) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public double getChanceToucher() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setDescription(String description) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setChanceToucher(double chanceToucher) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	

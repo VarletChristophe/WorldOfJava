@@ -1,6 +1,6 @@
 package Interface;
 
-public interface ICombattant {
+public interface ICombattant extends IAttaque{
 	
 	public void attaquer(ICombattant adversaire);
 	public void defendre(int degat);

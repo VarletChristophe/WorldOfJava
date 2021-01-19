@@ -1,5 +1,6 @@
 
-import Jeu.AbstractCombattant;
+
+import Jeu.Classe;
 import Jeu.Monstre;
 import Jeu.Personnage;
 
@@ -68,13 +69,19 @@ public class WorldOfJava {
 		 */
 		public static ICombattant personnageFactory() {
 			
+			Classe classe1 = new Classe();
+			classe1.setNomClasse("Classe 1");
+			classe1.setNom("Fusil");
+			classe1.setDescription("Arme à feu");
+			classe1.setChanceToucher(2.0);
+			
 			@SuppressWarnings("resource")
 			Scanner nomPersonnage = new Scanner(System.in);
 
 			System.out.println("Veuillez entrer un nom de personnage :");
 			String str = nomPersonnage.nextLine();
-			
-			Personnage personnage1 = new Personnage(str, 100, 4);
+			Personnage personnage1 = new Personnage(str, 100, 4, classe1);
+			System.out.println(personnage1);
 			return personnage1;
 			//return str;
 			
